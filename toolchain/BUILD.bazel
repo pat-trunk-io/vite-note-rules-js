@@ -3,7 +3,6 @@ load("@rules_nodejs//nodejs:toolchain.bzl", "nodejs_toolchain")
 
 bin.vite_node_binary(
     name = "vite-node-bin",
-    node_toolchain = "@node_linux_amd64",
 )
 
 nodejs_toolchain(
