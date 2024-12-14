@@ -1,3 +1,11 @@
 {
-  "name": "vite-note-rules-js"
+  "name": "vite-note-rules-js",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "vite-node": "^2.1.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": []
+  }
 }

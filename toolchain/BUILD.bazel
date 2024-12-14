@@ -1,0 +1,22 @@
+load("@npm//:vite-node/package_json.bzl", "bin")
+load("@rules_nodejs//nodejs:toolchain.bzl", "nodejs_toolchain")
+
+bin.vite_node_binary(
+    name = "vite-node-bin",
+    node_toolchain = "@node_linux_amd64",
+)
+
+nodejs_toolchain(
+    name = "vite-node-toolchain",
+    node = ":vite-node-bin",
+    visibility = ["//visibility:public"],
+)
+
+toolchain(
+    name = "vite-node-toolchain-def",
+    exec_compatible_with = [
+        "@platforms//os:linux",
+    ],
+    toolchain = ":vite-node-toolchain",
+    toolchain_type = "@rules_nodejs//nodejs:toolchain_type",
+)
